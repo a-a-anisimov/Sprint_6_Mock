@@ -6,7 +6,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.Assert.assertEquals;
 
@@ -27,13 +26,14 @@ public class LionParamsManeTest {
         MockitoAnnotations.openMocks(this);
     }
 
-    @Parameterized.Parameters (name = "Sex: {0}, expectedMane: {1}")
-        public static Object[][] params() {
-            return new Object[][] {
-                    {"Самец", true},
-                    {"Самка", false}
-            };
+    @Parameterized.Parameters(name = "Sex: {0}, expectedMane: {1}")
+    public static Object[][] params() {
+        return new Object[][]{
+                {"Самец", true},
+                {"Самка", false}
+        };
     }
+
     @Test
     public void doesHaveMane() throws Exception {
         Lion lion = new Lion(sex, feline);

@@ -7,7 +7,6 @@ import static org.junit.Assert.assertThrows;
 
 public class LionExceptionTest {
 
-
     @Test
     public void checkExeption() {
         Feline feline = null;
