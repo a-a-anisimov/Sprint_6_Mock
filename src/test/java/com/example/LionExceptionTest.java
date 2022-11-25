@@ -1,31 +1,20 @@
 package com.example;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
 
-import java.util.List;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
-import static org.junit.Assert.*;
-
-@RunWith(MockitoJUnitRunner.class)
-public class LionTest {
-
-    @Test
-    public void getKittens() {
-
-    }
-
+public class LionExceptionTest {
 
 
     @Test
-    public void doesHaveMane() throws Exception {
-        Lion lion = new Lion("Оно");
-        assertEquals(false, lion.doesHaveMane());
-    }
-
-    @Test
-    public void getFood() {
+    public void checkExeption() {
+        Feline feline = null;
+        Exception actualExeption = assertThrows(Exception.class, () ->
+                new Lion("оно", feline));
+        assertEquals("Используйте допустимые значения пола животного - самец или самка", actualExeption.getMessage());
     }
 }
+
+
